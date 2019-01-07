@@ -1,0 +1,11 @@
+# See https://prettier.io/docs/en/ignore#ignoring-files for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# production
+/build
+
+# development
+/public
+/src/serviceWorker.js
