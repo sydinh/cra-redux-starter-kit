@@ -1,3 +1,3 @@
 # My create-react-app and redux starter kit
 
-> I am working in progress
+https://cra-redux-starter-kit.firebaseapp.com/

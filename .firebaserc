@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "production": "cra-redux-starter-kit"
+  }
+}
