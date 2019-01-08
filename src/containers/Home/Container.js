@@ -2,7 +2,15 @@ import React, { Fragment } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-import { increment, incrementAsync, decrement, decrementAsync } from 'modules/counter';
+import {
+  increment,
+  incrementAsync,
+  decrement,
+  decrementAsync,
+  getCounter,
+  getIncrementing,
+  getDecrementing,
+} from 'modules/counter';
 
 import withScrollToTopOnMount from 'utils/withScrollToTopOnMount';
 
@@ -28,9 +36,9 @@ const HomeContainer = props => (
 );
 
 const mapStateToProps = state => ({
-  count: state.counter.count,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing,
+  count: getCounter(state.counter),
+  isIncrementing: getIncrementing(state.counter),
+  isDecrementing: getDecrementing(state.counter),
 });
 
 const mapDispatchToProps = {

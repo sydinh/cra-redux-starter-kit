@@ -97,3 +97,8 @@ export const decrementAsync = () => {
     }, 3000);
   };
 };
+
+// Selectors
+export const getCounter = state => state.count;
+export const getIncrementing = state => state.isIncrementing;
+export const getDecrementing = state => state.isDecrementing;
