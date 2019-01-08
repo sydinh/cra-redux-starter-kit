@@ -14,24 +14,23 @@ import {
 } from 'modules/counter';
 
 import withScrollToTopOnMount from 'utils/withScrollToTopOnMount';
+import Button from 'components/Shared/Button';
 
 const HomeContainer = props => (
   <Fragment>
     <h1>Home</h1>
     <p>Counter: {props.counter}</p>
-
     <div>
-      <button onClick={props.increment}>Increment</button>
-      <button onClick={props.incrementAsync} disabled={props.isIncrementing}>
+      <Button onClick={props.increment}>Increment</Button>
+      <Button onClick={props.incrementAsync} disabled={props.isIncrementing}>
         Increment Async
-      </button>
+      </Button>
     </div>
-
     <div>
-      <button onClick={props.decrement}>Decrement</button>
-      <button onClick={props.decrementAsync} disabled={props.isDecrementing}>
+      <Button onClick={props.decrement}>Decrement</Button>
+      <Button onClick={props.decrementAsync} disabled={props.isDecrementing}>
         Decrement Async
-      </button>
+      </Button>
     </div>
   </Fragment>
 );
