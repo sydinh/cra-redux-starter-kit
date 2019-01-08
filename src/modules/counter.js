@@ -1,3 +1,5 @@
+import { fromJS } from 'immutable';
+
 // Actions
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED';
 export const INCREMENT = 'counter/INCREMENT';
@@ -5,41 +7,27 @@ export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED';
 export const DECREMENT = 'counter/DECREMENT';
 
 // Initial State
-const initialState = {
+const initialState = fromJS({
   counter: 0,
   isIncrementing: false,
   isDecrementing: false,
-};
+});
 
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT_REQUESTED:
-      return {
-        ...state,
-        isIncrementing: true,
-      };
-
+      return state.set('isIncrementing', true);
     case INCREMENT:
-      return {
-        ...state,
-        counter: state.counter + 1,
-        isIncrementing: !state.isIncrementing,
-      };
-
+      return state
+        .update('counter', counter => counter + action.payload)
+        .set('isIncrementing', false);
     case DECREMENT_REQUESTED:
-      return {
-        ...state,
-        isDecrementing: true,
-      };
-
+      return state.set('isDecrementing', true);
     case DECREMENT:
-      return {
-        ...state,
-        counter: state.counter - 1,
-        isDecrementing: !state.isDecrementing,
-      };
-
+      return state
+        .update('counter', counter => counter - action.payload)
+        .set('isDecrementing', false);
     default:
       return state;
   }
@@ -54,6 +42,7 @@ export const increment = () => {
 
     dispatch({
       type: INCREMENT,
+      payload: 1,
     });
   };
 };
@@ -67,6 +56,7 @@ export const incrementAsync = () => {
     return setTimeout(() => {
       dispatch({
         type: INCREMENT,
+        payload: 1,
       });
     }, 3000);
   };
@@ -80,6 +70,7 @@ export const decrement = () => {
 
     dispatch({
       type: DECREMENT,
+      payload: 1,
     });
   };
 };
@@ -93,12 +84,13 @@ export const decrementAsync = () => {
     return setTimeout(() => {
       dispatch({
         type: DECREMENT,
+        payload: 1,
       });
     }, 3000);
   };
 };
 
 // Selectors
-export const getCounter = state => state.counter;
-export const getIncrementing = state => state.isIncrementing;
-export const getDecrementing = state => state.isDecrementing;
+export const getCounter = state => state.get('counter');
+export const getIncrementing = state => state.get('isIncrementing');
+export const getDecrementing = state => state.get('isDecrementing');

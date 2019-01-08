@@ -12,6 +12,7 @@ https://cra-redux-starter-kit.firebaseapp.com
 - react-helmet
 - redux
 - redux-thunk
+- immutable
 - prop-types
 - **Styles:** SASS
 - **Server:** Firebase
