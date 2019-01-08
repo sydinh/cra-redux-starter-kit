@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {
   increment,
@@ -34,6 +35,21 @@ const HomeContainer = props => (
     </div>
   </Fragment>
 );
+
+HomeContainer.propTypes = {
+  count: PropTypes.number.isRequired,
+  isIncrementing: PropTypes.bool,
+  isDecrementing: PropTypes.bool,
+  increment: PropTypes.func.isRequired,
+  incrementAsync: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+  decrementAsync: PropTypes.func.isRequired,
+};
+
+HomeContainer.defaultProps = {
+  isIncrementing: false,
+  isDecrementing: false,
+};
 
 const mapStateToProps = state => ({
   count: getCounter(state.counter),
