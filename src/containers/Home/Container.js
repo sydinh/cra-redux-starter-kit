@@ -18,7 +18,7 @@ import withScrollToTopOnMount from 'utils/withScrollToTopOnMount';
 const HomeContainer = props => (
   <Fragment>
     <h1>Home</h1>
-    <p>Count: {props.count}</p>
+    <p>Counter: {props.counter}</p>
 
     <div>
       <button onClick={props.increment}>Increment</button>
@@ -37,7 +37,7 @@ const HomeContainer = props => (
 );
 
 HomeContainer.propTypes = {
-  count: PropTypes.number.isRequired,
+  counter: PropTypes.number.isRequired,
   isIncrementing: PropTypes.bool,
   isDecrementing: PropTypes.bool,
   increment: PropTypes.func.isRequired,
@@ -52,7 +52,7 @@ HomeContainer.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  count: getCounter(state.counter),
+  counter: getCounter(state.counter),
   isIncrementing: getIncrementing(state.counter),
   isDecrementing: getDecrementing(state.counter),
 });

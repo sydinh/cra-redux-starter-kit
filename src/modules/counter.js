@@ -6,7 +6,7 @@ export const DECREMENT = 'counter/DECREMENT';
 
 // Initial State
 const initialState = {
-  count: 0,
+  counter: 0,
   isIncrementing: false,
   isDecrementing: false,
 };
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
     case INCREMENT:
       return {
         ...state,
-        count: state.count + 1,
+        counter: state.counter + 1,
         isIncrementing: !state.isIncrementing,
       };
 
@@ -36,7 +36,7 @@ export default (state = initialState, action) => {
     case DECREMENT:
       return {
         ...state,
-        count: state.count - 1,
+        counter: state.counter - 1,
         isDecrementing: !state.isDecrementing,
       };
 
@@ -99,6 +99,6 @@ export const decrementAsync = () => {
 };
 
 // Selectors
-export const getCounter = state => state.count;
+export const getCounter = state => state.counter;
 export const getIncrementing = state => state.isIncrementing;
 export const getDecrementing = state => state.isDecrementing;
