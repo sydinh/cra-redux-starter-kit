@@ -1,28 +1,28 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import * as routes from 'constants/routes';
+import * as ROUTES from 'constants/routes';
 
 const Navigation = () => (
   <nav role="navigation">
     <ul>
       <li>
-        <NavLink exact to={routes.HOME}>
+        <NavLink exact to={ROUTES.HOME}>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink exact to={routes.ABOUT}>
+        <NavLink exact to={ROUTES.ABOUT}>
           About
         </NavLink>
       </li>
       <li>
-        <NavLink exact to={routes.WORK}>
+        <NavLink exact to={ROUTES.WORK}>
           Work
         </NavLink>
       </li>
       <li>
-        <NavLink exact to={routes.CONTACT}>
+        <NavLink exact to={ROUTES.CONTACT}>
           Contact
         </NavLink>
       </li>

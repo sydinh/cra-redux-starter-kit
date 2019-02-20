@@ -1,16 +1,16 @@
 import React, { lazy, Suspense } from 'react';
 
-import ErrorBoundary from 'utils/ErrorBoundary';
+import ErrorHandler from 'components/ErrorHandler';
 import Loading from 'components/Loading';
 
 const LazyLoadedContainer = lazy(() => import('./Container'));
 
 const Home = () => (
-  <ErrorBoundary>
+  <ErrorHandler>
     <Suspense fallback={<Loading />}>
       <LazyLoadedContainer />
     </Suspense>
-  </ErrorBoundary>
+  </ErrorHandler>
 );
 
 export default Home;

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
-import withScrollToTopOnMount from 'utils/withScrollToTopOnMount';
+import withScroll from 'utils/withScroll';
 
 const AboutContainer = () => (
   <Fragment>
@@ -12,4 +12,4 @@ const AboutContainer = () => (
   </Fragment>
 );
 
-export default withScrollToTopOnMount(AboutContainer);
+export default withScroll(AboutContainer);

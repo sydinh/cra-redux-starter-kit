@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "firebase deploy",
-    "prettier": "prettier \"*/**/*.{js,json,scss,md}\" --write"
+    "prettify": "prettier \"*/**/*.{js,json,scss,md}\" --write"
   },
   "husky": {
     "hooks": {

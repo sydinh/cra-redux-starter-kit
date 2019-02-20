@@ -6,7 +6,7 @@
 
 import React from 'react';
 
-const withScrollToTopOnMount = WrappedComponent => {
+const withScroll = WrappedComponent => {
   class ScrollToTopOnMount extends React.Component {
     componentDidMount() {
       window.scrollTo(0, 0);
@@ -20,4 +20,4 @@ const withScrollToTopOnMount = WrappedComponent => {
   return ScrollToTopOnMount;
 };
 
-export default withScrollToTopOnMount;
+export default withScroll;
