@@ -13,7 +13,7 @@ import {
   getDecrementing,
 } from 'modules/counter';
 
-import withScrollToTopOnMount from 'utils/withScrollToTopOnMount';
+import withScroll from 'utils/withScroll';
 import Button from 'components/Shared/Button';
 
 const HomeContainer = props => (
@@ -70,5 +70,5 @@ const withRedux = connect(
 
 export default compose(
   withRedux,
-  withScrollToTopOnMount,
+  withScroll,
 )(HomeContainer);

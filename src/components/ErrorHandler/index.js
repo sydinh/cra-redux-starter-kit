@@ -1,5 +1,5 @@
 /**
- * ErrorBoundary
+ * ErrorHandler
  *
  * https://reactjs.org/docs/error-boundaries.html
  */
@@ -7,9 +7,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class ErrorBoundary extends Component {
-  constructor() {
-    super();
+class ErrorHandler extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       hasError: false,
       errorInfo: null,
@@ -34,8 +34,8 @@ class ErrorBoundary extends Component {
   }
 }
 
-ErrorBoundary.propTypes = {
+ErrorHandler.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ErrorBoundary;
+export default ErrorHandler;
